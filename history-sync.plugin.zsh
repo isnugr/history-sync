@@ -182,7 +182,7 @@ function history_sync_pull() {
     # Check if EXTENDED_HISTORY is enabled, and if so, restore multi-line
     # commands in the local history file
     [[ -o extendedhistory ]] && _restore_multiline_commands_in_file
-    SED -i '/^$/d' "$ZSH_HISTORY_FILE"
+    SED -i '' -e '/^$/d' "$ZSH_HISTORY_FILE"
 }
 
 # Encrypt and push current history to master
